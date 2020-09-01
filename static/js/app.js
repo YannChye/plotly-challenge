@@ -1,7 +1,7 @@
 function init() {
     var dropDown=d3.select("#selDataset");
     //populate dropdown options
-    d3.json("samples.json").then(data => {
+    d3.json("./data/samples.json").then(data => {
         var subIDs=data.names;
         subIDs.forEach((subID) => {
             dropDown.append("option").text(subID).property("value",subID);
@@ -10,7 +10,7 @@ function init() {
     //initial metadata-using subject 940
     getMetadata("940");
     //initial otu data
-    d3.json("samples.json").then(data => {
+    d3.json("./data/samples.json").then(data => {
         var selected=data.samples.filter(sample => sample.id==="940");
         var otuIds=selected[0].otu_ids;
         var otuLabels=selected[0].otu_labels;
@@ -52,7 +52,7 @@ function init() {
 }
 //update subject otus based on dropdown selection
 function updateSubject(subject) {
-    d3.json("samples.json").then(data => {
+    d3.json("./data/samples.json").then(data => {
         var selected=data.samples.filter(sample => sample.id===subject);
         var otuIds=selected[0].otu_ids;
         var otuLabels=selected[0].otu_labels;
@@ -77,7 +77,7 @@ function updateSubject(subject) {
 }
 //get and populate subject metadata
 function getMetadata(subject) {
-    d3.json("samples.json").then(data => {
+    d3.json("./data/samples.json").then(data => {
         var metadata=data.metadata;
         var selected=metadata.filter(sample => sample.id===parseInt(subject));
         d3.select("#sample-metadata").selectAll("*").remove();
