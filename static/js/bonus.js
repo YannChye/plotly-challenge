@@ -1,7 +1,7 @@
 //initial gauge chart
 //adapted from https://com2m.de/blog/technology/gauge-charts-with-plotly/
 function init() {
-    d3.json("./data/samples.json").then(data => {
+    d3.json("samples.json").then(data => {
         // getting wash freq from subject 940
         var wFreq=data.metadata.filter(sample => sample.id===940)[0].wfreq;
         // creating pointer
@@ -9,6 +9,7 @@ function init() {
         // creating gauge
         // using pie instead of gauge because can't change the gauge width "pie hole" with plotly gauge to match example screenshot
         var dataGauge = [{ 
+                // create red dot at center of gauge needle
                 type:"scatter",
                 x:[0],
                 y:[0],
@@ -44,7 +45,7 @@ function init() {
 }
 //update gauge needle when subject dropdown changes
 function changeGauge(subject) {
-    d3.json("./data/samples.json").then(data => {
+    d3.json("samples.json").then(data => {
         var wFreq=data.metadata.filter(sample => sample.id===parseInt(subject))[0].wfreq;
         var path=needlePath(wFreq);
         var layoutUpdate = {type:"path",
