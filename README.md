@@ -11,7 +11,7 @@ Folder structure include -
     * **app.js** file - to create bar and bubble chart via plotly, and sample metadata
     * **bonus.js** file - to create the bonus gauge chart, referencing code from [here](https://com2m.de/blog/technology/gauge-charts-with-plotly/)
     
-### References*
+### References
 * Hulcr, J. et al.(2012) *A Jungle in There: Bacteria in Belly Buttons are Highly Diverse, but Predictable*. Retrieved from: [http://robdunnlab.com/projects/belly-button-biodiversity/results-and-data/](http://robdunnlab.com/projects/belly-button-biodiversity/results-and-data/)
 * Hecktor M. (2017) *Gauge Charts with Plotly*. Retrieved from: [https://com2m.de/blog/technology/gauge-charts-with-plotly/](https://com2m.de/blog/technology/gauge-charts-with-plotly/)
 * [Plotly.js documentation](https://plot.ly/javascript/)
